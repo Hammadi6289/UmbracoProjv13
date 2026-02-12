@@ -7,7 +7,7 @@
 **CMS:** Umbraco v13  
 **Framework:** .NET 8  
 **Database:** SQLite (Development)  
-**Date Started:** February 12, 2026
+**Date Started:** February 2026
 
 ---
 
