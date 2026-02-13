@@ -3,6 +3,8 @@
 
 @{
     var homePage = Model.AncestorOrSelf<ContentModels.Home>();
+    var confirmBookingPage = Model.Root().DescendantsOrSelf().FirstOrDefault(x => x.ContentType.Alias == "bookingPage");
+
 }
 
 <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
@@ -20,11 +22,14 @@
                 </li>
                 @foreach (var page in homePage.Children.Where(x => !x.Value<bool>("hideFromTopNavigation")))
                 {
-                    <li class="nav-item" style="color: #37145a !important;">
+                    <li class="nav-item">
                         <a class="nav-link px-lg-3 py-3 py-lg-4" href="@(page.Url())">@(page.Name)</a>
                     </li>
                 }
             </ul>
+            <a href="@(confirmBookingPage?.Url() ?? "/booking-page")" class="btn btn-primary appointment-confirm-button" role="button">
+            @Umbraco.GetDictionaryValue("Navigation.appointmentonfirmbutton")
+            </a>
         </div>
     </div>
 </nav>

@@ -20,7 +20,7 @@
 </title>
 <meta name="Description" content="@(metaDescription ?? @Model.Name)" />
 <meta name="Name" content="@metaName" />
-<meta name="Keywords" content="@string.Join(",", metaKeywords)" />
+<meta name="Keywords" content="@(metaKeywords != null ? string.Join(",", metaKeywords) : "")" />
 <meta name="robots" content="@(isFollowable ? "FOLLOW," : "NOFOLLOW,")@(isIndexable ? "INDEX" : "NOINDEX")" />
 <link rel="canonical" href="@canonicalLink" />
 
