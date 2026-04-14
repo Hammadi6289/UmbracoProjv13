@@ -11141,7 +11141,18 @@ header.masthead .page-heading,
 header.masthead .post-heading,
 header.masthead .site-heading {
   color: #fff;
+  /* background: linear-gradient(135deg,#37145a 0%,#7332aa 100%);
+  position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+    width: 100%;
+    max-width: auto;
+    min-height: 200px; */
 }
+
 header.masthead .page-heading,
 header.masthead .site-heading {
   text-align: center;
