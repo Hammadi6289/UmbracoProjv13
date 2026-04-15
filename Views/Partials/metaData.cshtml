@@ -1,8 +1,10 @@
 ﻿@inherits UmbracoViewPage<IPublishedContent>
 
 @{
-    var homePage = Model.AncestorOrSelf<Home>();
-    string domainAddress = homePage.Url(mode:UrlMode.Absolute).TrimEnd('/');
+    @* var homePage = Model.AncestorOrSelf<Home>(); *@
+    var homePage = Model.Root().DescendantsOrSelf<Home>().FirstOrDefault();
+    @* string domainAddress = homePage.Url(mode:UrlMode.Absolute).TrimEnd('/'); *@
+    string domainAddress = (homePage ?? Model.Root()).Url(mode:UrlMode.Absolute).TrimEnd('/');
     string canonicalLink = domainAddress + Model.Url();
     string metaName = Model.Value<string>("metaName");
     string metaDescription = Model.Value<string>("metaDescription");

@@ -18,7 +18,7 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	/// <summary>Booking Page</summary>
+	/// <summary>Get a quote</summary>
 	[PublishedModel("bookingPage")]
 	public partial class BookingPage : PublishedContentModel
 	{
